@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Da Parola a Frase</title>
+<meta name="description" content="Scrivi la continuazione della parola del giorno e guarda la tua frase unirsi a quelle di tutti gli altri, in un ticker che gira senza sosta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <span class="topbar__label">Parola&nbsp;→&nbsp;Frase</span>
+  <a class="topbar__index" href="admin.html">Backend →</a>
+</header>
+
+<main class="layout">
+
+  <section class="panel" aria-label="Aggiungi la tua frase">
+    <p class="panel__eyebrow">Continua la parola</p>
+
+    <p class="panel__word-preview">
+      <span id="wordPreview">—</span>
+    </p>
+
+    <form id="submitForm" class="field-form">
+      <label class="field">
+        <span class="field__label">La tua continuazione <em>(max 140 caratteri)</em></span>
+        <textarea id="phraseInput" rows="3" maxlength="140" required
+          placeholder="es. porta con sé qualcosa di nuovo"></textarea>
+      </label>
+      <div class="char-count"><span id="charCount">0</span> / 140</div>
+      <button type="submit" class="btn" id="submitBtn">Aggiungi la mia frase →</button>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+
+    <p class="panel__hint">Ogni frase inviata entra subito nel ticker qui accanto, insieme a quelle di tutti gli altri visitatori.</p>
+  </section>
+
+  <section class="stage" id="stage" aria-label="Composizione animata">
+    <h1 class="word-fixed" id="wordFixed">—</h1>
+
+    <div class="ticker-wrap" id="tickerWrap" aria-hidden="true">
+      <div class="ticker ticker--front"><div class="ticker__track" id="trackFront"></div></div>
+      <div class="ticker ticker--accent"><div class="ticker__track" id="trackAccent"></div></div>
+      <div class="ticker ticker--soft"><div class="ticker__track" id="trackSoft"></div></div>
+    </div>
+
+    <p class="stage__caption" id="stageCaption">In attesa delle prime frasi…</p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span>Costruito con HTML / CSS / JS + Firebase Firestore.</span>
+  <span>Ispirato al ticker verticale di tomorrow-happens.studio.</span>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

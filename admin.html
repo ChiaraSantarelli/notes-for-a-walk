@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backend — Da Parola a Frase</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <span class="topbar__label">Backend</span>
+  <a class="topbar__index" href="index.html">← Torna al sito</a>
+</header>
+
+<main class="admin-layout">
+
+  <!-- LOGIN -->
+  <section class="panel admin-login" id="loginPanel" aria-label="Accesso">
+    <p class="panel__eyebrow">Accesso</p>
+    <form id="loginForm" class="field-form">
+      <label class="field">
+        <span class="field__label">Email</span>
+        <input type="email" id="loginEmail" required autocomplete="username">
+      </label>
+      <label class="field">
+        <span class="field__label">Password</span>
+        <input type="password" id="loginPassword" required autocomplete="current-password">
+      </label>
+      <button type="submit" class="btn">Entra →</button>
+      <p class="form-msg" id="loginMsg" role="status" aria-live="polite"></p>
+    </form>
+    <p class="panel__hint">L'utente admin va creato una sola volta dalla console Firebase (Authentication → Users → Add user). Vedi il README per i dettagli.</p>
+  </section>
+
+  <!-- PANNELLO ADMIN (visibile solo dopo login) -->
+  <section class="panel admin-panel hidden" id="adminPanel" aria-label="Gestione contenuti">
+    <div class="admin-panel__head">
+      <p class="panel__eyebrow">Parola cardine</p>
+      <button class="btn btn--ghost" id="logoutBtn">Esci</button>
+    </div>
+
+    <form id="wordForm" class="field-form">
+      <label class="field">
+        <span class="field__label">Parola attiva sul sito</span>
+        <input type="text" id="wordInput" maxlength="24" required>
+      </label>
+      <button type="submit" class="btn">Aggiorna parola →</button>
+      <p class="form-msg" id="wordMsg" role="status" aria-live="polite"></p>
+    </form>
+
+    <p class="panel__eyebrow admin-panel__list-title">Frasi inviate dagli utenti</p>
+    <ul class="phrase-list" id="phraseList">
+      <li class="phrase-list__empty">Nessuna frase ancora.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span>Pannello riservato — non indicizzato dai motori di ricerca.</span>
+  <span>Le scritture su "parola" e le cancellazioni richiedono un accesso autenticato (vedi regole Firestore nel README).</span>
+</footer>
+
+<script type="module" src="admin.js"></script>
+</body>
+</html>
