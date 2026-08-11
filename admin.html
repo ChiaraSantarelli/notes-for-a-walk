@@ -1,15 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Write a word</title><link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOTE(S) FOR A WALK - Gestione Parole</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body data-page="admin">
-<header class="topbar"><a href="index.html" class="brand">TOMORROW HAPPENS™</a><nav><a href="notes.html">WRITE YOUR NOTES +</a><a href="gallery.html">OVERVIEW PERFORMANCE +</a><a class="active">WRITE A WORD +</a></nav></header>
-<main class="admin-page">
-  <div class="admin-title">WRITE A WORD</div>
-  <form id="wordForm"><label for="word">KEYWORD</label><input id="word" maxlength="40" required autocomplete="off"><button type="submit">SAVE ↗</button></form>
-  <p id="status"></p>
-</main>
-<script src="app.js"></script>
-</body></html>
+<body data-page="words">
+
+  <header class="header-standard">
+    <a href="index.html" class="brand-title">NOTE(S) FOR A WALK</a>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="notes.html">NOTES</a>
+      <a href="admin.html" class="active">GESTIONE PAROLE +</a>
+      <a href="gallery.html">GALLERY +</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title serif-text">Gestione Parole e Frasi</h1>
+    <p class="page-subtitle">Aggiungi o rimuovi le parole che compaiono nella barra laterale della Home.</p>
+
+    <div class="card-box">
+      <h3 class="serif-text">Aggiungi Nuova Parola</h3>
+      <form id="addWordForm" class="form-row">
+        <input type="text" id="newWordInput" placeholder="Inserisci termine..." required>
+        <button type="submit" class="btn">AGGIUNGI</button>
+      </form>
+    </div>
+
+    <div class="words-grid" id="wordsListContainer"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
