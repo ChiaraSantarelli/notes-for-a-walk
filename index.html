@@ -1,15 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tomorrow Happens</title><link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOTE(S) FOR A WALK</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="home">
-<header class="topbar"><a href="index.html" class="brand">TOMORROW HAPPENS™</a><nav><a href="notes.html">WRITE YOUR NOTES +</a><a href="gallery.html">OVERVIEW PERFORMANCE +</a><a href="admin.html">WRITE A WORD +</a></nav></header>
-<main class="home">
-  <div class="fixed-word" id="homeWord">Tomorrow</div>
-  <div class="marquee-window"><div class="marquee" id="marquee"></div></div>
-</main>
-<footer><span>© TOMORROW HAPPENS™</span><span><a href="notes.html">WRITE YOUR NOTES</a> · <a href="gallery.html">OVERVIEW PERFORMANCE</a></span></footer>
-<script src="app.js"></script>
-</body></html>
+
+  <div class="home-layout">
+    
+    <!-- Sidebar Sinistra: Menu Parole -->
+    <aside class="sidebar">
+      <div>
+        <div class="brand-header">
+          <a href="index.html" class="brand-title">NOTE(S) FOR A WALK</a>
+        </div>
+
+        <!-- Menu dinamico delle parole -->
+        <div class="word-menu" id="wordMenu"></div>
+      </div>
+
+      <!-- Navigazione interna compatibile con i tuoi file -->
+      <div class="sidebar-nav-links">
+        <a href="notes.html">NOTES +</a>
+        <a href="admin.html">GESTIONE PAROLE +</a>
+        <a href="gallery.html">GALLERY +</a>
+      </div>
+    </aside>
+
+    <!-- Area Centrale: Parola selezionata H2/H3 e Frasi a giro -->
+    <main class="main-stage">
+      <div class="word-display-container">
+        
+        <h2 class="active-word-title" id="activeWordTitle">Tomorrow</h2>
+
+        <div class="rotating-sentences-stream" id="sentencesStream"></div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
